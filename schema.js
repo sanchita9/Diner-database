@@ -38,6 +38,9 @@ password: {
 photoUrl: {
 
 },
+phoneNumber: {
+	type: Number
+},
 
 email: {
 	type: String,
@@ -45,24 +48,17 @@ email: {
 	match: [/.+\@.+\..+/, "Please enter a valid e-mail address"]
 },
 skills: {
-	type: Number,
-	type: [String]
-}
+	yearsExp: {type: Number, required:true},
+	skillSet: {type: [String], required : true}
+},
 
 userCreated: {
 	type: Date,
-	default: Date.now
+	default: Date.now()
 }
 });
 
-var CusineSchema = new Schema ({
-	title: String,
-	menus:  [DinerSchema, ChefSchema]
-})
+const MenuModel = mongoose.model("Menu", MenuSchema);
+const ChefModel = mongoose.model("Chef", ChefSchema);
 
-
-
-mongoose.model("Menu", MenuSchema);
-mongoose.model("Chef", ChefSchema);
-mongoose.model("Cuisine", CuisineSchema);
-module.exports = mongoose;
+module.exports = {MenuModel, ChefModel};

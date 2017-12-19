@@ -22,19 +22,19 @@ app.get("/", function(req, res) {
 res.render("cuisine");
 });
 
-app.get("/api/songs", function(req, res) {
+app.get("/api/", function(req, res) {
   Song.find({}).then(function(songs){
   res.json(songs);
 });
 });
 
-app.get("/api/songs/:name", function(req, res) {
+app.get("/api//:name", function(req, res) {
   Song.findOne({name:req.params.name}).then(function(song) {
     res.json(song);
   });
 });
 
-app.post("/api/songs", function(req, res) {
+app.post("/api/", function(req, res) {
   var timestamp = new Date();
   req.body.timestamp = timestamp;
   console.log(req.body)
@@ -43,14 +43,14 @@ app.post("/api/songs", function(req, res) {
   });
 });
 
-app.put("/api/songs/:name", function(req, res) {
+app.put("/api//:name", function(req, res) {
   Song.findOneAndUpdate({name:
   req.params.name}, req.body, {new: true}).then(function(song) {
     res.json(song);
   });
 });
 
-app.delete("/api/songs/:name", function(req, res) {
+app.delete("/api//:name", function(req, res) {
   Song.findOneAndRemove({name:
     req.params.name}).then(function() {
     res.json({ success: true });
