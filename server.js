@@ -1,7 +1,8 @@
-const express = require("express");
-const app     = express();
-const path    = require("path");
-const PORT    = process.env.PORT || 3001;
+const express  = require("express");
+const app      = express();
+const mongoose = require('mongoose');
+const path     = require("path");
+const PORT     = process.env.PORT || 3001;
 
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
@@ -21,6 +22,7 @@ app.get('/cheflogin', function(req, res) {
 
 app.get('/dinerlogin', function(req, res) {
     res.sendFile(path.join(__dirname + '/.client/build/diner.html'));
+});
 
 app.get('/menu', function(req, res) {
         res.sendFile(path.join(__dirname + '/.client/build/menu.html'));
