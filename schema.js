@@ -14,9 +14,12 @@ const MenuSchema = new Schema ({
     	type: Number,
     	required: true
 },
-	ingredients: { 
+	descriptions: { 
 		type: Array,
 	required: true
+},
+photoUrl: {
+	
 },
 });
 
