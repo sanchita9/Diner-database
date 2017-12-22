@@ -1,24 +1,19 @@
 {
   "name": "diner-database",
-  "version": "1.0.0",
-  "description": "Raw database for user and chef",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/sanchita9/Diner-database.git"
-  },
-  "author": "hilton",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/sanchita9/Diner-database/issues"
-  },
-  "homepage": "https://github.com/sanchita9/Diner-database#readme",
+  "version": "0.1.0",
+  "private": true,
   "dependencies": {
     "express": "^4.16.2",
-    "mongoose": "^4.13.7"
+    "mongoose": "^4.13.7",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-router-dom": "^4.2.2",
+    "react-scripts": "1.0.17"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
   }
 }
