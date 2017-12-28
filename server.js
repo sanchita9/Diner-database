@@ -24,4 +24,12 @@ app.get('/diner', (req, res) => {
     res.json({"name": "Menu Information"});
   });
 
+  app.post('/newChef', (req, res) => {
+    res.json({"name": "newChef data"})
+  });
+  
+  app.post('/newDiner', (req, res) => {
+    res.json({"name": "newDiner data"})
+  });
+
 app.listen(3005, () => console.log('Server app listening on port 3005!'));
