@@ -1,34 +1,39 @@
-const express  = require("express");
+// DEPENDENCIES: express-cors-mongoose
+const express  = require('express');
 const app      = express();
+const cors     = require('cors');
 const mongoose = require('mongoose');
 const path     = require("path");
-const PORT     = process.env.PORT || 3001;
 
-// Serve up static assets (usually on heroku)
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static("client/build"));
-}
-// Send every request to the React app
+app.use(cors());
 
 // ROUTES
-// Define any API routes before this runs
-app.get("*", function(req, res) {
-  res.sendFile(path.join(__dirname, "./client/build/index.html"));
+app.get('/', (req, res) => res.send('Hello World!'));
+
+app.get('/home', (req, res) => {
+  res.json({"name": "Home Page"});
 });
 
-app.get('/cheflogin', function(req, res) {
-    res.sendFile(path.join(__dirname + '/.client/build/chef.html'));
-});
+app.get('/diner', (req, res) => {
+    res.json({"name": "Chef Information"});
+  });
 
-app.get('/dinerlogin', function(req, res) {
-    res.sendFile(path.join(__dirname + '/.client/build/diner.html'));
-});
+app.get('/chef', (req, res) => {
+    res.json({"name": "Diner Information"});
+  });
 
-app.get('/menu', function(req, res) {
-        res.sendFile(path.join(__dirname + '/.client/build/menu.html'));
-});
+app.get('/menu', (req, res) => {
+    res.json({"name": "Menu Information"});
+  });
 
-app.listen(PORT, function() {
-  console.log(`🌎 ==> Server now on port ${PORT}!`);
-});
+// POST ROUTES
+app.post('/newDiner', (req, res) => {
+    res.json({"name": "newDiner data"});
+  });
 
+app.post('/newChef', (req, res) => {
+    res.json({"name": "newChef data"});
+  });
+
+
+app.listen(3005, () => console.log('Server app listening on port 3005!'));
