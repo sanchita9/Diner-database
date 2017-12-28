@@ -31,7 +31,7 @@ app.post('/newDiner', (req, res) => {
     res.json({"name": "newDiner data"});
   });
 
-app.get('/newChef', (req, res) => {
+app.post('/newChef', (req, res) => {
     res.json({"name": "newChef data"});
   });
 
