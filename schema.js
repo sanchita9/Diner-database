@@ -115,9 +115,9 @@ const DinerSchema = new Schema({
 
 });
 
-const MenuModel = mongoose.model("Menu", MenuSchema);
-const DinerModel = mongoose.model("Diner", DinerSchema);
-const ChefModel = mongoose.model("Chef", ChefSchema);
+const Menu = mongoose.model("Menu", MenuSchema);
+const Diner = mongoose.model("Diner", DinerSchema);
+const Chef = mongoose.model("Chef", ChefSchema);
 
 
-module.exports = { MenuModel, ChefModel, DinerModel };
+module.exports = { Menu, Chef, Diner };
