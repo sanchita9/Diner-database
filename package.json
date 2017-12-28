@@ -5,7 +5,6 @@
   "dependencies": {
     "axios": "^0.17.1",
     "cors": "^2.8.4",
-    "dev": "nodemon server.js",
     "express": "^4.16.2",
     "mongo": "^0.1.0",
     "mongoose": "^4.13.7",
