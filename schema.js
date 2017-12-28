@@ -55,7 +55,7 @@ email: {
 },
 skills: {
 	yearsExp: {type: Number, required:true},
-	skillSet: {type: [String], required: true}
+	skillSet: {type: [String], required : true}
 },
 
 userCreated: {
