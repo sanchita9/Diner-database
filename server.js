@@ -11,7 +11,7 @@ const path = require("path");
 const DB = require('./schema');
 
 
-const DB = require('./schema');
+
 
 app.use(cors());
 
@@ -40,51 +40,35 @@ app.get('/menu', (req, res) => {
   res.json({ "name": "Menu Information" });
 });
 
-<<<<<<< HEAD
-  app.post('/newChef', (req, res) => {
-    const chef = new DB.Chef({
-      username: req.body.username,
-      password: req.body.password,
-      photoUrl: req.body.photoUrl,
-      phoneNumber: req.body.phoneNumber,
-      emails: req.body.emails,
-      skills: req.body.skills
-    });
-
-    chef.save();
-    res.json({"name": "newChef data"})
-  });
-
-  app.post('/newDiner', (req, res) => {
-    const diner = new DB.Diner({
-      username: req.body.username,
-      password: req.body.password,
-      name: req.body.name,
-      phoneNumber: req.body.phoneNumber,
-      emails: req.body.emails,
-      address: req.body.address,
-      order: req.body.order,
-      payment: req.body.payment
-    });
-
-    diner.save();
-    res.json({"name": "newDiner data"})
-=======
 // POST ROUTES
 app.post('/newDiner', (req, res) => {
-  res.json({ "name": "newDiner data" });
+  const diner = new DB.Diner({
+    username: req.body.username,
+    password: req.body.password,
+    name: req.body.name,
+    phoneNumber: req.body.phoneNumber,
+    emails: req.body.emails,
+    address: req.body.address,
+    order: req.body.order,
+    payment: req.body.payment
+  });
+
+  diner.save();
+  res.json({"name": "newDiner data"})
 });
 
 app.post('/newChef', (req, res) => {
   const chef = new DB.Chef({
     username: req.body.username,
-    password: req.body.password
->>>>>>> 5f3b1b36ed4c3e7f7a1b098a88b8f9898e82b7ee
+    password: req.body.password,
+    photoUrl: req.body.photoUrl,
+    phoneNumber: req.body.phoneNumber,
+    emails: req.body.emails,
+    skills: req.body.skills
   });
-  // WARNING NOT COMPLETE
 
   chef.save();
-  res.json({ "name": "newChef data" });
+  res.json({"name": "newChef data"})
 });
 
   app.post('/newMenu', (req, res) => {
