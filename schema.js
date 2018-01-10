@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/3001');
+mongoose.connect('mongodb://localhost/Diner-database');
 var Schema = mongoose.Schema;
 
 const MenuSchema = new Schema({
