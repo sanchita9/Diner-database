@@ -3,7 +3,8 @@ const express = require('express');
 const app = express();
 const cors = require('cors');
 const mongoose = require('mongoose');
-const path = require("path");
+const path = require('path');
+const bodyparser = require('bodyparser');
 
 // Import all models and save them to the name DB
 // This will allow you to access the model with dot notation 
